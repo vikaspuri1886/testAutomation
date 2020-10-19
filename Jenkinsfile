@@ -14,7 +14,7 @@ pipeline {
 
     stage('deployToCloud') {
       steps {
-        sh 'mvn deploy -P cloudhub'
+        sh 'mvn deploy -P cloudhub -o'
       }
     }
 
