@@ -12,12 +12,6 @@ pipeline {
       }
     }
 
-    stage('Build') {
-      steps {
-        sh 'mvn -B -DskipTests clean package'
-      }
-    }
-
     stage('deployToCloud') {
       steps {
         sh 'mvn deploy -P cloudhub'
