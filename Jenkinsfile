@@ -1,16 +1,14 @@
 pipeline {
-  agent none
+  agent {
+    docker {
+      image 'maven:3.6.3-jdk-11'
+    }
+
+  }
   stages {
     stage('initialize') {
       steps {
         echo 'Intializing the pipeline'
-      }
-    }
-
-    stage('paths') {
-      steps {
-        sh '''echo PATH = ${PATH}
-echo M2_HOME = ${M2_HOME}'''
       }
     }
 
