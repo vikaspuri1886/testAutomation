@@ -18,5 +18,11 @@ pipeline {
       }
     }
 
+    stage('deployToCloud') {
+      steps {
+        sh 'mvn deploy -P cloudhub'
+      }
+    }
+
   }
 }
