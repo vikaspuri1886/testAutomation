@@ -1,0 +1,285 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Get Customer",
+        "description": "",
+        "id": "testing-the-api\u0027s;get-customer",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 243347990,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I create a new request with http://testingautomation.us-e2.cloudhub.io/ service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "http://testingautomation.us-e2.cloudhub.io/",
+                  "offset": 28
+                }
+              ],
+              "location": "RegisterCustomerStepDefinition.createNewRequest(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 163173,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I add the test endpoint to the service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "test",
+                  "offset": 10
+                }
+              ],
+              "location": "RegisterCustomerStepDefinition.addEndpoint(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3325451351,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I send the GET request to the service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "GET",
+                  "offset": 11
+                }
+              ],
+              "location": "RegisterCustomerStepDefinition.sendRequest(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 134890786,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I get the 200 response code",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 10
+                }
+              ],
+              "location": "RegisterCustomerStepDefinition.responseCodeValidation(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1045204812,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I assert the following values in the response body",
+            "match": {
+              "location": "RegisterCustomerStepDefinition.responseAttributeValidation(String,String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "givenName",
+                  "vikas"
+                ],
+                "line": 9
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 12,
+        "name": "Register Customer",
+        "description": "",
+        "id": "testing-the-api\u0027s;register-customer",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 96735,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I create a new request with http://posttestscript.us-e2.cloudhub.io/api/customers/registrations/ service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "http://posttestscript.us-e2.cloudhub.io/api/customers/registrations/",
+                  "offset": 28
+                }
+              ],
+              "location": "RegisterCustomerStepDefinition.createNewRequest(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 80613,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I add the registerUser endpoint to the service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "registerUser",
+                  "offset": 10
+                }
+              ],
+              "location": "RegisterCustomerStepDefinition.addEndpoint(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 77039,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I pass application/json as content type",
+            "match": {
+              "arguments": [
+                {
+                  "val": "application/json",
+                  "offset": 7
+                }
+              ],
+              "location": "RegisterCustomerStepDefinition.setContentType(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3314711,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I send the following values in the request body",
+            "match": {
+              "location": "RegisterCustomerStepDefinition.setRequestBody(String,String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "firstName",
+                  "Vikas"
+                ],
+                "line": 17
+              },
+              {
+                "cells": [
+                  "lastName",
+                  "Puri"
+                ],
+                "line": 18
+              },
+              {
+                "cells": [
+                  "phoneNumber",
+                  "999"
+                ],
+                "line": 19
+              },
+              {
+                "cells": [
+                  "emailId",
+                  "vikas.puri@facebook.com"
+                ],
+                "line": 20
+              },
+              {
+                "cells": [
+                  "password",
+                  "xxx"
+                ],
+                "line": 21
+              }
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 327684464,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "I send the POST request to the service",
+            "match": {
+              "arguments": [
+                {
+                  "val": "POST",
+                  "offset": 11
+                }
+              ],
+              "location": "RegisterCustomerStepDefinition.sendRequest(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 612406,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "I get the 200 response code",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 10
+                }
+              ],
+              "location": "RegisterCustomerStepDefinition.responseCodeValidation(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 26066353,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I assert the following values in the response body",
+            "match": {
+              "location": "RegisterCustomerStepDefinition.responseAttributeValidation(String,String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "message",
+                  "User registered successfully successfully."
+                ],
+                "line": 25
+              }
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Testing the API\u0027s",
+    "description": "",
+    "id": "testing-the-api\u0027s",
+    "keyword": "Feature",
+    "uri": "registerCustomer.feature"
+  }
+]
