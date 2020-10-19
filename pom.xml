@@ -184,6 +184,46 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
-    </pluginRepositories>
-
+    	
+    	<pluginRepository>
+        	<id>mule-public</id>
+        	<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
+    	</pluginRepository>
+</pluginRepositories>
+<profiles>
+<profile>
+  <id>cloudhub</id>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.mule.tools.maven</groupId>
+        <artifactId>mule-maven-plugin</artifactId>
+        <configuration>
+          <cloudHubDeployment>
+            <muleVersion>4.3.0</muleVersion> 
+            <username>vikaspuri5</username> 
+            <password>Mihir@14puri</password> 
+            <applicationName>${artifactId}-${maven.build.timestamp}</applicationName> 
+            <environment>SANDBOX</environment> 
+            <businessGroup>${anypoint.businessGroup}</businessGroup>
+            <region>${cloudhub.region}</region>
+            <uri>${anypoint.uri}</uri> 
+            <workerType>Micro</workerType> 
+            <workers>1</workers>
+          </cloudHubDeployment>
+        </configuration>
+        <executions>
+          <execution>
+            <id>deploy</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>deploy</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</profile>
+  </profiles>
 </project>
