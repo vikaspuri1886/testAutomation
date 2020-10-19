@@ -1,15 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('test') {
+    stage('initialize') {
       steps {
-          sh 'mvn clean install'
-      }
-    }
-
-    stage('deploy') {
-      steps {
-        sh 'mvn deploy -P cloudhub'
+        echo 'Intializing the pipeline'
       }
     }
 
