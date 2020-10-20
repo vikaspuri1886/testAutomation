@@ -24,19 +24,21 @@
 		<plugins>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<cloudHubDeployment>
-						<uri>https://anypoint.mulesoft.com</uri>
-						<muleVersion>${app.runtime}</muleVersion>
-						<username>vikaspuri5</username>
-						<password>Mihir@14</password>
-						<applicationName>${project.artifactId}</applicationName>
-						<environment>Development</environment>
-					</cloudHubDeployment>
-				</configuration>
+   				<artifactId>mule-maven-plugin</artifactId>
+   				<version>3.3.5</version>
+   				<extensions>true</extensions>
+
+			   <configuration>
+ 		     		<cloudHubDeployment>
+        			 	<username>vikaspuri5</username>
+         				<password>Mihir@14</password>         
+         				<workers>1</workers>
+         				<workerType>Micro</workerType>
+         				<environment>Sandbox</environment>
+         				<muleVersion>4.3.0</muleVersion>
+         				<applicationName>${project.artifactId}</applicationName>
+      				</cloudHubDeployment>
+   				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
