@@ -12,7 +12,7 @@ pipeline {
       }
     }
 
-    stage('deployToCloud') {
+    stage('build') {
       steps {
         sh 'mvn clean install'
       }
