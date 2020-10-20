@@ -31,7 +31,7 @@
 			   <configuration>
  		     		<cloudHubDeployment>
         			 	<username>vikaspuri5</username>
-         				<password>Mihir@14</password>         
+         				<password>Mihir@14puri</password>         
          				<workers>1</workers>
          				<workerType>Micro</workerType>
          				<environment>Sandbox</environment>
