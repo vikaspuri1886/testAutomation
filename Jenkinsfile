@@ -13,6 +13,18 @@ pipeline {
       }
     }
 
+    stage('Deploy') {
+      steps {
+        sh 'mvn -f pom.xml package deploy -DmuleDeploy'
+      }
+    }
+
+    stage('IntegerationTesting') {
+      steps {
+        sh 'mvn -f pom.xml failsafe:integration-test'
+      }
+    }
+
   }
   tools {
     maven 'MAVEN_HOME'
