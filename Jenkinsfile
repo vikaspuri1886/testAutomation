@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'tools {maven \'M2_HOME\'}'
+        sh 'mvn -f pom.xml clean install'
       }
     }
 
