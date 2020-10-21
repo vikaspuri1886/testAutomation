@@ -25,6 +25,12 @@ pipeline {
       }
     }
 
+    stage('GenerateReports') {
+      steps {
+        cucumber 'cucumber.json'
+      }
+    }
+
   }
   tools {
     maven 'MAVEN_HOME'
