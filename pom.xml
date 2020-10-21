@@ -18,6 +18,7 @@
     
 		<app.runtime>4.3.0</app.runtime>
 		<mule.maven.plugin.version>3.1.1</mule.maven.plugin.version>
+        <skipTests>true</skipTests>
 	</properties>
 
 	<build>
@@ -52,6 +53,14 @@
 					</includes>
 				</configuration>
 			</plugin>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <skipITs>${skipTests}</skipITs>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
