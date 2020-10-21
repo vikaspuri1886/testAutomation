@@ -54,14 +54,6 @@
 					</includes>
 				</configuration>
 			</plugin>
-			<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.0.0-M5</version>
-                <configuration>
-                    <skipITs>${skipTests}</skipITs>
-                </configuration>
-            </plugin>
             
 		<plugin>
                 <groupId>com.mulesoft.munit.tools</groupId>
