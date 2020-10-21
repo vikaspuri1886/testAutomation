@@ -31,6 +31,12 @@ pipeline {
       }
     }
 
+    stage('Email') {
+      steps {
+        emailext(subject: 'Cucumber Reports', body: 'Attached the body', attachLog: true, attachmentsPattern: 'target/cucumber.json', from: 'vikaspuri123@gmail.com', mimeType: 'application/json', to: 'vikas_mullana@yahoo.com')
+      }
+    }
+
   }
   tools {
     maven 'MAVEN_HOME'
