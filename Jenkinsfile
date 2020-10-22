@@ -15,7 +15,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'mvn -f pom.xml package'
+        sh 'mvn -f pom.xml package deploy -DmuleDeploy'
       }
     }
 
