@@ -27,7 +27,7 @@ pipeline {
 
     stage('Email') {
       steps {
-        emailext(subject: 'Cucumber Reports', body: 'Attached the body', attachLog: true, attachmentsPattern: 'target/cucumber-reports/report.html', from: 'vikaspuri123@gmail.com', mimeType: 'text/html', to: 'vikas_mullana@yahoo.com')
+        emailext(subject: 'Testing Reports for $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', body: 'Please find the functional testing reports:', attachmentsPattern: 'target/cucumber-reports/report.html', from: 'vikaspuri123@gmail.com', mimeType: 'text/html', to: 'vikas_mullana@yahoo.com')
       }
     }
 
