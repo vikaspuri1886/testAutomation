@@ -15,7 +15,7 @@ pipeline {
         script {
           pom = readMavenPom file: "pom.xml";
 
-          filesbyGlob = findFiles(glob: "target/*-${pom.packaging}");
+          filesbyGlob = findFiles(glob: "target/*${pom.packaging}");
 
 
 
