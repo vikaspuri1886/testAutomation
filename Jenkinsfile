@@ -12,7 +12,16 @@ pipeline {
 
     stage('upload to nexus') {
       steps {
-        nexusArtifactUploader(artifacts: [[artifactId: 'posttestscript', classifier: '', file: 'target/posttestscript-1.0.0-mule-application.jar', type: 'jar']], credentialsId: 'nexus', groupId: 'com.mycompany', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'com.njclabs', version: '1.0.0')
+        script {
+          pom = readMavenPom file: "pom.xml";
+
+          filesbyGlob = findFiles(glob: "target/*.${pom.packaging}");
+
+
+
+          nexusArtifactUploader(artifacts: [[artifactId: pom.artifactId, classifier: '', file: filesbyGlob[0].path, type: 'jar']], credentialsId: 'nexus', groupId: pom.groupId, nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'com.njclabs', version: pom.version)
+        }
+
       }
     }
 
