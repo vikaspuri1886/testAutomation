@@ -13,7 +13,7 @@ pipeline {
     stage('upload to nexus') {
       steps {
         script {
-          pom = readMavenPom file: "pom.xml";
+          pom = readMavenPom "pom.xml";
 
           filesbyGlob = findFiles(glob: "target/*.${pom.packaging}");
 
