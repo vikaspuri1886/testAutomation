@@ -12,7 +12,7 @@ pipeline {
 
     stage('upload to nexus') {
       steps {
-        nexusArtifactUploader(artifacts: [[artifactId: 'posttestscript', classifier: '', file: 'target/posttestscript-1.0.0-SNAPSHOT-mule-application.jar', type: 'jar']], credentialsId: 'nexus', groupId: 'com.mycompany', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'repository/com.njclabs/', version: '1.0.0-SNAPSHOT')
+        nexusArtifactUploader(artifacts: [[artifactId: 'posttestscript', classifier: '', file: 'target/posttestscript-1.0.0-SNAPSHOT-mule-application.jar', type: 'jar']], credentialsId: 'nexus', groupId: 'com.mycompany', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: '/com.njclabs/', version: '1.0.0-SNAPSHOT')
       }
     }
 
