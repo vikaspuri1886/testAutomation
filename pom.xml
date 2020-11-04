@@ -106,13 +106,7 @@
 	</build>
 
 	<dependencies>
-		<dependency>
-            <groupId>b3518803-262d-42ed-8a30-63afd2e3c95f</groupId>
-            <artifactId>apios-anypoint-bdd-sapi</artifactId>
-            <version>1.0.0</version>
-            <classifier>raml</classifier>
-            <type>zip</type>
-        </dependency>
+		
         <dependency>
             <groupId>org.mule.connectors</groupId>
             <artifactId>mule-http-connector</artifactId>
