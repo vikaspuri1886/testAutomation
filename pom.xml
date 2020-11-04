@@ -4,7 +4,7 @@
 
 	<groupId>com.mycompany</groupId>
 	<artifactId>posttestscript</artifactId>
-	
+	<packaging>mule-application</packaging>
     <version>1.0.0</version>
     
 	<name>posttestscript</name>
