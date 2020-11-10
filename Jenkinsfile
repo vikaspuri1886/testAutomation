@@ -5,7 +5,7 @@ pipeline {
       steps {
         script {
           echo "hello";
-          echo ${currentBuild.number};
+
           pom = readMavenPom file: "pom.xml";
 
           filesbyGlob = findFiles(glob: "target/*.jar");
