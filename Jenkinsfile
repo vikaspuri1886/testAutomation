@@ -1,11 +1,17 @@
 pipeline {
   agent any
   stages {
+    stage('build') {
+      steps {
+        sh 'mvn -f pom.xml clean install'
+      }
+    }
+
     stage('upload to nexus') {
       steps {
         script {
           echo "hello";
-          echo ${BUILD_NUMBER};
+          echo $BUILD_NUMBER;
           pom = readMavenPom file: "pom.xml";
 
           filesbyGlob = findFiles(glob: "target/*.jar");
